@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import axios from "axios";
-let id = 317442;
+let id = 1;
 const movie = ref();
 
 async function getMovies() {
@@ -25,9 +25,8 @@ getMovies();
 
 <template>
   <select id="movies" @change="getMovies" v-model="id">
-    <option value="271110" onclick="getSelecetedOption">
-      Captain America: Civil War
-    </option>
+    <option hidden selected value="1" onclick="getSelecetedOption">Select a Movie</option>
+    <option value="271110">Captain America: Civil War</option>
     <option value="317442">The Last: Naruto the Movie</option>
     <option value="812225">Black Clover: Sword of the Wizard King</option>
     <option value="98566">Teenage Mutant Ninja Turtles</option>
@@ -40,7 +39,6 @@ getMovies();
     </option>
     <option value="475557">Joker</option>
   </select>
-  <button id="btn">GET</button>
   <div id="container" v-if="movie">
     <h1 id="title">{{ movie.title }}</h1>
     <h2 id="Overview">{{ movie.overview }}</h2>
@@ -54,15 +52,15 @@ getMovies();
       :src="`https://www.youtube.com/embed/${movie.trailer.at(0).key}`"
     ></iframe>
     <div class="information">
-      <h3 id="Popularity">{{ movie.popularity }}</h3>
-      <h3 id="Release Date">{{ movie.release_date }}</h3>
-      <h3 id="Revenue">{{ movie.revenue }}</h3>
-      <h3 id="Runtime">{{ movie.runtime }}</h3>
-      <h3 id="Vote Average">{{ movie.vote_average }}</h3>
-      <h3 id="Language">{{ movie.original_language }}</h3>
-      <h3 id="Vote Count">{{ movie.vote_count }}</h3>
-      <h3 id="Adult">{{ movie.adult }}</h3>
-      <h3 id="Budget">{{ movie.budget }}</h3>
+      <h3 id="Popularity">Popularity: {{ movie.popularity }}</h3>
+      <h3 id="Release Date">Release Date: {{ movie.release_date }}</h3>
+      <h3 id="Revenue">Revenue: {{ movie.revenue }}</h3>
+      <h3 id="Runtime">Runtime: {{ movie.runtime }}</h3>
+      <h3 id="Vote Average">Vote Average: {{ movie.vote_average }}</h3>
+      <h3 id="Language">Language: {{ movie.original_language }}</h3>
+      <h3 id="Vote Count">Vote Count: {{ movie.vote_count }}</h3>
+      <h3 id="Adult">Adult: {{ movie.adult }}</h3>
+      <h3 id="Budget">Budget: {{ movie.budget }}</h3>
     </div>
   </div>
 </template>
@@ -91,7 +89,7 @@ body {
 select {
   color: white;
   text-align: center;
-  margin-left: 420px;
+  margin-left: 440px;
   border: 3px solid white;
   background-color: rgb(217 49 49);
   padding: 10px;
