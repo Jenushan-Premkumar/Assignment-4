@@ -25,18 +25,18 @@ getMovies();
 
 <template>
   <select id="movies" @change="getMovies" v-model="id">
-    <option hidden selected value="1" onclick="getSelecetedOption">Select a Movie</option>
-    <option value="271110">Captain America: Civil War</option>
-    <option value="317442">The Last: Naruto the Movie</option>
+    <option hidden selected value="1" onclick="getSelecetedOption">
+      Select a Movie
+    </option>
+    <option value="299536">Avengers: Infinity War</option>
+    <option value="607">Men in Black</option>
     <option value="812225">Black Clover: Sword of the Wizard King</option>
-    <option value="98566">Teenage Mutant Ninja Turtles</option>
+    <option value="324857">Spider-Man: Into the Spider-Verse</option>
     <option value="635302">Demon Slayer the Movie: Mugen Train</option>
     <option value="580489">Venom: Let There Be Carnage</option>
-    <option value="768744">My Hero Academia: World Heroes Mission</option>
+    <option value="155">The Dark Knight</option>
     <option value="566525">Shang-Chi and the Legend of the Ten Rings</option>
-    <option value="225745">
-      Steins;Gate: The Movie - Load Region of Déjà Vu
-    </option>
+    <option value="900667">One Piece Film Red</option>
     <option value="475557">Joker</option>
   </select>
   <div id="container" v-if="movie">
